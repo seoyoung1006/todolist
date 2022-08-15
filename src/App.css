@@ -48,19 +48,11 @@ h5 {
     color: rgb(55, 99, 180);
 }
 
-/* img {
-    height: 200px;
-    position: absolute;
-    max-width: 100%;
-} */
-input {
+.order input {
     color: rgb(27, 75, 163);
     background-color: skyblue;
     border: none;
     border-radius: 10px;
     border: 1px;
 }
-button{
-    height: 25px;
-    width: 70px;
-}
+

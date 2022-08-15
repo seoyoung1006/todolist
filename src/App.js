@@ -6,7 +6,6 @@ import CreateCatagory from './Components/CreateCatagory';
 import Header from './Components/Header';
 import Main from './Components/Main';
 import UpdateCatagory from './Components/UpdateCatagory';
-import sky from './img/skyimg.jpg';
 
 class App extends Component {
   constructor(props){
@@ -89,7 +88,8 @@ getCatagory(){
           ></Header>
          </div>
         </div>
-        <CatagoryOrder
+        <div className="order">
+          <CatagoryOrder
           onChangePage={function(id){
             this.setState({
               mode:'read',
@@ -141,11 +141,9 @@ getCatagory(){
             }
           }.bind(this)}
           ></CatagoryOrder>
-        <Create onClick={function(e){
-          e.preventDefault();
-          var input = <CreateCatagory></CreateCatagory>
-        }.bind(this)}></Create>
-        <CreateCatagory></CreateCatagory>
+        </div>
+        <Create></Create>
+        {/* <CreateCatagory></CreateCatagory> */}
         {this.getCatagory()}
       </div>
     );
