@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import CatagoryOrder from './Components/CatagoryOrder';
 import Create from './Components/Create';
-import CreateCatagory from './Components/CreateCatagory';
 import Header from './Components/Header';
 import Main from './Components/Main';
 import UpdateCatagory from './Components/UpdateCatagory';
@@ -57,7 +56,7 @@ getCatagory(){
     var _catagory = this.getReadCatagory();
     _article = <Main title={_catagory.title} desc={_catagory.desc}></Main>
   }else if(this.state.mode === 'create'){
-    _article = <CreateCatagory onSubmit={function(_title, _desc){
+    _article = <Create onSubmit={function(_title, _desc){
       this.max_catagory_id = this.max_catagory_id + 1;
       var newCatagory = Array.from(this.state.catagory);
       newCatagory.push({id:this.max_catagory_id,
@@ -69,7 +68,7 @@ getCatagory(){
         selected_catagory_id:this.max_catagory_id
       });
       console.log(_title,_desc);
-    }.bind(this)}></CreateCatagory>
+    }.bind(this)}></Create>
   }
   return _article;
 }
@@ -143,7 +142,6 @@ getCatagory(){
           ></CatagoryOrder>
         </div>
         <Create></Create>
-        {/* <CreateCatagory></CreateCatagory> */}
         {this.getCatagory()}
       </div>
     );
