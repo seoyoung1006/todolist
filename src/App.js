@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       mode:'home',
       selected_catagory_id:1,
-      Header: {title:'To Do List', sub: `ㅁㅁㅁ님 안녕하세요:> 할 일을 기록해주세요*^^*`},
+      Header: {title:'To Do List', sub: `${this.name()}님 안녕하세요:> 할 일을 기록해주세요*^^*`},
       home:{title: 'Write', desc:`Plus your 'To do list' catagory`},
       catagory: [
         {id:1, title:'Exercise', desc:'오전 10시쯤 헬스장 가서 하체운동하기'},
@@ -24,16 +24,16 @@ class App extends Component {
       ]
     }
   }
-// name(){
-//   var name;
-//   var person = prompt('회원님 이름을 적어주세요:)');
-//   if(person === null|| person === ""){
-//     name = "입력해주세요:("
-//   }else{
-//     name = person + "님 안녕하세요:> 할 일을 기록해주세요*^^*"
-//   }
-//   // document.getElementById("name").innerHTML = name;
-// }
+name(){
+  var name;
+  var person = prompt('회원님 이름을 적어주세요:)');
+  if(person === null|| person === ""){
+    name = "입력해주세요:("
+  }else{
+    name = person
+  }
+  return name;
+}
 
 getReadCatagory(){
   var i = 0;
